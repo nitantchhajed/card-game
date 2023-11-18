@@ -3,13 +3,12 @@ package main
 import "fmt"
 
 func main() {
-	//var card string = "Ace of Spades"
-	card := newCard()
-
-	//After we initialised a variable with := then we don't have to use := again to assign a new value to it
-	//example ->
-	//cards = "Five of Diamonds"
-	fmt.Println(card)
+	cards := []string{"Ace of Diamonds", newCard()}
+	cards = append(cards, "Six of Spades")
+	
+	for i, card := range cards {
+		fmt.Println(i, card)
+	}
 }
 
 func newCard() string {
